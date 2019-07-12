@@ -2,12 +2,16 @@
 #-*- coding: utf-8 -*-
 import math
 a = int(input('please input a number:'))
-pr = []
-for i in range(0,a+1):
-    for range(1,int(math.sqrt(i))+1):
+pr = list(range(0,a+1))
+impr = []
+if a < 2:
+    print(pr)
+for i in pr:
+    for k in range(2,int(math.sqrt(i))+1):
         if i % k == 0:
-            continue
-        else:
-            pr.append(i)
+            impr.append(i)
+            break
+for i in impr:
+    pr.remove(i)
 print(pr)
 
